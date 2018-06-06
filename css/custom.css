@@ -1,0 +1,165 @@
+/**************** common css *************/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Open Sans";
+}
+
+.bold {
+  font-weight: 600;  
+}
+
+.text-blue {
+  color: #4A90E2;
+}
+
+.blue-gradient {
+  background: linear-gradient(to right, #24D3FD , #3C4CD2);
+}
+
+.height-1024 {
+  min-height: 1024px;
+}
+
+.bg-green {
+  background-color: #7ED321
+}
+
+/*************** page css **************/
+main {
+  padding-top: 5rem;
+  padding-bottom: 5rem; 
+}
+
+.background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: -webkit-linear-gradient(left, #24D3FD, #3C4CD2);
+  background: -o-linear-gradient(left, #24D3FD, #3C4CD2);
+  background: linear-gradient(to right, #24D3FD, #3C4CD2);
+}
+
+#stars-left {
+  width: 200px;    
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+}
+
+#stars-right {
+  width: 200px;    
+  position: absolute;
+  top: 7rem;
+  right: 5rem;
+}
+
+#logo {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.headline-upper {
+  font-size: 2.7rem;
+}
+
+.headline-under {
+  font-size: 1.7rem;
+}
+
+.call-to-action-text {
+  font-size: 1.4rem; 
+}
+
+.progressbar-custom {
+  border-radius: 0;
+}
+
+
+.btn-send {
+  background-color: #FED144; 
+  color: #ffffff;
+  padding: 1rem;
+  width: 100px;
+}
+
+.btn-send:active {
+  background-color: #DBAC17; 
+}
+
+/******** Responsive *********************/
+@media (max-width: 374px) {
+  #stars-right {
+    display: none;
+  }
+
+  .headline-upper {
+    font-size: 2.5rem;
+  }
+
+  .headline-under {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #stars-left {
+    top: -2rem;
+    left: -2.3rem;
+  }
+
+  #stars-right {
+    display: none;
+  }
+
+  #logo {
+    width: 100px;
+    height: 100px;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  #stars-left {
+    left: 3rem;
+  }
+
+  #stars-right {
+    top: 5rem;
+    right: 3rem;
+  }
+
+  .headline-upper {
+    font-size: 3rem;
+  }
+
+  .headline-under {
+    font-size: 2.5rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .headline-upper {
+    font-size: 4rem;
+  }
+
+  .headline-under {
+    font-size: 3rem;
+  }
+}
+
+
