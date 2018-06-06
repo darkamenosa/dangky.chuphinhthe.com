@@ -18,7 +18,9 @@ body {
 }
 
 .blue-gradient {
-  background: linear-gradient(to right, #24D3FD , #3C4CD2);
+  background: -webkit-linear-gradient(left, #24D3FD, #3C4CD2);
+  background: -o-linear-gradient(left, #24D3FD, #3C4CD2);
+  background: linear-gradient(to right, #24D3FD, #3C4CD2);
 }
 
 .height-1024 {
@@ -107,7 +109,7 @@ main {
 }
 
 .btn-send:active {
-  background-color: #DBAC17; 
+  background-color: #DBAC17;
 }
 
 /******** Responsive *********************/
