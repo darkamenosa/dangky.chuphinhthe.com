@@ -17,7 +17,7 @@ $(document).ready(function() {
       return new Promise(function(resolve, reject) {
         $.ajax({
           url: url,
-          method: 'POST'
+          method: 'POST',
           data: 'email=' + email,
         })
         .done(resolve)
