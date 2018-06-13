@@ -1,11 +1,26 @@
 $(document).ready(function() {
 
-    function sendDataToFireBase(data) {
+    function identityWrapper(f) {
+      return function(val) {
+        f();
+      }
+    }
 
+    function sendDataToFireBase(data) {
       return new Promise((resolve, reject) => {
         setTimeout(resolve, 3000);
       })
+    }
 
+    function sendEmailToMailChimp(email) {
+      var url = 'https://chuphinhthe.us18.list-manage.com/subscribe/post?u=72446cbc5712924d591a1301a&amp;id=f8e1834e62';
+      return new Promise(function(resolve, reject) {
+        $.post({
+          email: email
+        })
+        .done(resolve)
+        .fail(reject)
+      })
     }
      
     function isEmail(text) {
@@ -41,6 +56,18 @@ $(document).ready(function() {
     function validateFail(error) {
       console.log(error)
     }
+
+    function showLoading() {
+        // Hide action-block and show loading-block
+        $('#action-block').hide();
+        $('#loading-block').show();
+    }
+
+    function hideLoading() {
+        // Hide loading-block and show thank-you-block
+        $('#loading-block').hide();
+        $('#thank-you-block').show();
+    }
     
     function getFormData() {
       var input = getInputValue()
@@ -55,22 +82,9 @@ $(document).ready(function() {
         .resolve()
         .then(getFormData)
         .then(validate)
-        .then((val) => {
-
-          // Hide action-block and show loading-block
-          $('#action-block').hide();
-          $('#loading-block').show();
-
-          return val;
-        })
-        .then(sendDataToFireBase)
-        .then((val) => {
-          // Hide loading-block and show thank-you-block
-          $('#loading-block').hide();
-          $('#thank-you-block').show();
-
-          return val;
-        })
+        .then(identityWrapper(showLoading))
+        .then(sendEmailToMailChimp)
+        .then(identityWrapper(hideLoading))
         .catch(validateFail);
     }
 
