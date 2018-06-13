@@ -81,7 +81,10 @@
           <div class="row text-center">
             <div class="col-sm-12 offset-md-3 col-md-6 text-left">
               <form id="mail-form" action="" novalidate>
-                 <div class="input-group">
+                <div>
+                  <label for="email" id="error-lbl" class="d-none error">Hãy nhập email hoặc số điện thoại chính xác</label>
+                </div>
+                <div class="input-group">
                   <input id="phone-mail-input" name="email" class="form-control" type="text" placeholder="Nhập email hoặc số điện thoại ở đây" required="true" /> 
                   <div class="input-group-append">
                     <button id="submit-btn" class="btn btn-send" type="submit">Gửi</button>
@@ -115,6 +118,20 @@
       </div>
     </main>
 
+
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyADeMZZPsGZPCtLOC2m3S7NsShNfrGsM_Y",
+        authDomain: "chuphinhthecom.firebaseapp.com",
+        databaseURL: "https://chuphinhthecom.firebaseio.com",
+        projectId: "chuphinhthecom",
+        storageBucket: "chuphinhthecom.appspot.com",
+        messagingSenderId: "487189525505"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.min.js" type="text/javascript"></script>
     <script src="js/index.js" type="text/javascript"></script>
