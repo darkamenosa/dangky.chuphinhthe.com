@@ -15,8 +15,10 @@ $(document).ready(function() {
     function sendEmailToMailChimp(email) {
       var url = 'https://chuphinhthe.us18.list-manage.com/subscribe/post?u=72446cbc5712924d591a1301a&amp;id=f8e1834e62';
       return new Promise(function(resolve, reject) {
-        $.post({
-          email: email
+        $.ajax({
+          url: url,
+          method: 'POST'
+          data: 'email=' + email,
         })
         .done(resolve)
         .fail(reject)
