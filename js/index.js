@@ -54,6 +54,8 @@ $(document).ready(function() {
   }
 
   function sendDataToFireBase(email) { 
+    fbq('track', 'CompleteRegistration', { action: 'RegisterEmailOrPhoneNumber' });
+
     return getEmailsRef()
       .push()
       .set({
